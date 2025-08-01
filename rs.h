@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CONF.H"
+#include "CONF.h"
 
 namespace rs
 {

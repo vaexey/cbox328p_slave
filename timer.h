@@ -1,9 +1,10 @@
 #pragma once
 
-#include "CONF.H"
+#include "CONF.h"
 
 namespace timer
 {
+
     void setup()
     {
         pinMode(PIN_O1, OUTPUT);
@@ -45,5 +46,12 @@ namespace timer
         // TIMER 2 prescaler 1 only A
         TCCR2A = ((o3 != 0) << COM2A1) | _BV(WGM21) | _BV(WGM20);
         // TCCR2B = _BV(CS20);
+    }
+
+    // Reset timer counting
+    inline void reset()
+    {
+        TCNT1L = 0;
+        TCNT2 = 0;
     }
 }

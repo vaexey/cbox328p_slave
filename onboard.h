@@ -1,11 +1,13 @@
 #pragma once
 
-#include "CONF.H"
+#include "CONF.h"
 
 namespace onboard
 {
     const int _LED_COUNT = 3;
     const char _LED_PINS[] = {PIN_LED1, PIN_LED2, PIN_LED3};
+
+    bool manual_override = false;
 
     int led[] = {1,1,1};
     bool led_states[] = {1,1,1};
@@ -69,7 +71,10 @@ namespace onboard
                 led_states[i] = led[i];
             }
 
-            digitalWrite(_LED_PINS[i], led_states[i]);
+            if(!manual_override)
+                digitalWrite(_LED_PINS[i], led_states[i]);
+            else
+                digitalWrite(_LED_PINS[i], false);
         }
 
         const bool btn = !digitalRead(PIN_BUTTON);

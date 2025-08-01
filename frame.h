@@ -1,7 +1,8 @@
 #pragma once
 
-#include "CONF.H"
-#include "timer.h"
+#include "CONF.h"
+// #include "timer.h"
+#include "mapping.h"
 
 namespace frame
 {
@@ -13,7 +14,12 @@ namespace frame
     {
         auto addr = f_idx * 3;
         
-        timer::set(
+        // timer::set(
+        //     frame[addr],
+        //     frame[addr + 1],
+        //     frame[addr + 2]
+        // );
+        mapping::set_mapped(
             frame[addr],
             frame[addr + 1],
             frame[addr + 2]

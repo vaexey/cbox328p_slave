@@ -1,0 +1,3 @@
+1.1.2
+- fix GROUP2 id not being applicable
+- manual onboard LED override
