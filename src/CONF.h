@@ -1,5 +1,6 @@
 #ifndef ESP_CBOX_CONF
 #define ESP_CBOX_CONF
+#include <Arduino.h>
 
 // Default IDs that device will respond to
 #define ID_SINGLE_DEF 3   //"001"
