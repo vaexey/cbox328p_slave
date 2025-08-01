@@ -63,6 +63,7 @@ unsigned int CONF_M12V_MAX = CONF_M12V_MAX_DEF;
 #define CONF_CMD_CALIB_5 'C' // Calibrate analogRead5 with provided values
 #define CONF_CMD_CALIB_12 'D' // Calibrate analogRead12 with provided values
 #define CONF_CMD_ID 'E' // Set device ID
+#define CONF_CMD_MAP_SET 'F' // Set map value at specified id
 
 /// Address of eeprom config structure
 #define CONF_EEPROM_ADDRESS 0

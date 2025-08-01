@@ -1,5 +1,5 @@
-#define FIRMWARE_VERSION_RAW "1.1.2"
-// #define DEBUG
+#define FIRMWARE_VERSION_RAW "1.1.3p"
+#define DEBUG
 // #define DEBUG_VOLTAGES
 #define USE_EEPROM
 
@@ -310,6 +310,25 @@ void command()
         delay(15);
         rs::receive_mode();
         // delay(10);
+
+        onboard::setLedDelayed(1, 6);
+    }
+
+    else if(c == CONF_CMD_MAP_SET) {
+        // !4<ID><MAP><VAL>#
+        if(len < 10)
+        {
+            #ifdef DEBUG
+            dbg_nel(c, len);
+            #endif
+
+            return;
+        }
+
+        auto map_id = str2int(rs::buffer, 4, 6);
+        auto value = str2int(rs::buffer, 7, 9);
+
+        mapping::set_map_value(map_id, value);
 
         onboard::setLedDelayed(1, 6);
     }

@@ -29,4 +29,9 @@ namespace mapping
             map[i + 2 * CONF_MAPPING_SIZE] = i;
         }
     }
+
+    inline void set_map_value(const int map_idx, const unsigned char value)
+    {
+        map[map_idx] = value;
+    }
 }

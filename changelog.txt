@@ -1,3 +1,6 @@
 1.1.2
 - fix GROUP2 id not being applicable
 - manual onboard LED override
+1.1.3p
+- migration to platformio
+- add set map value command
