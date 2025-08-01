@@ -16,6 +16,7 @@
 #include <EEPROM.h>
 
 EE_CONF eec;
+void eeprom_read();
 #endif
 
 void setup()
@@ -62,6 +63,7 @@ void eeprom_read()
 }
 #endif
 
+void command();
 void loop()
 {
     rs::update();
